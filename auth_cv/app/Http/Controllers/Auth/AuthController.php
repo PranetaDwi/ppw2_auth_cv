@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\facades\Auth;
+use Illuminate\Support\facades\Hash;
 
 class AuthController extends Controller
 {
@@ -55,7 +58,7 @@ class AuthController extends Controller
 
     public function home(){
         if (Auth::check()){
-            return view ('auth.home');
+            return view ('cv.dashboard');
         }
         return redirect()->route('login')->withErrors(['email' => 'Please login to access the dashboard'])->onlyInput('email');
     }
