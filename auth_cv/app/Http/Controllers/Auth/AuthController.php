@@ -33,7 +33,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
-        return redirect()->route('dashboard')->withSuccess('You have successfully registered & loggedin!');
+        return redirect()->route('dashboard')->withSuccess('You have successfully registered & logged in!');
     }
 
     public function login(){
