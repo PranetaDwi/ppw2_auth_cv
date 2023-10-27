@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Praktikum Pemrograman Web</title>
+ <title>Successfully Registered</title>
 </head>
 <body>
- <h3>{{ $content['name'] }}</h3>
+ <h3>Halo.. {{ $content['name'] }}</h3>
  <h4>{{ $content['body'] }}</h4>
 
- <p>Terima kasih</p>
+ <p>Terima Kasih</p>
 </body>
 </html>

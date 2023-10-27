@@ -37,7 +37,7 @@ class AuthController extends Controller
             'name'=> $request->name,
             'email' => $request->email,
             'subject' => "Berhasil Register",
-            'body' => "Hai. Selamat datang di Curiculum Vitae Milik Neta",
+            'body' => "Hai. Selamat datang di Curiculum Vitae Milik Neta. Sekarang, kamu dapat mengaksesnya kapan dan dimanpun. Have a Good Day",
         ];
 
         $credentials = $request->only('email', 'password');
