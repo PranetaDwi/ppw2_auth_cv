@@ -31,6 +31,9 @@ class UserManagemenController extends Controller
 
     public function update(Request $request, $id){
         $photos = User::find($id);
+        File::delete(public_path() ."/storage/photos/original/".$photos->photo);
+        File::delete(public_path() ."/storage/photos/square/".$photos->photo);
+        File::delete(public_path() ."/storage/photos/thumbnail/".$photos->photo);
         $request->validate([
             'name' => 'required|string|max:250',
             'photo' => 'image|nullable|max:1999'
@@ -67,7 +70,9 @@ class UserManagemenController extends Controller
 
     public function destroy($id){
         $photos = User::find($id);
-        File::delete(public_path() ."/storage/".$photos->photo);
+        File::delete(public_path() ."/storage/photos/original/".$photos->photo);
+        File::delete(public_path() ."/storage/photos/square/".$photos->photo);
+        File::delete(public_path() ."/storage/photos/thumbnail/".$photos->photo);
         $photos->delete();
         return redirect()->route('managemenUser');
     }
