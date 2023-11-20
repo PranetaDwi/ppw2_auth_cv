@@ -9,8 +9,7 @@
             <div class="card-header">Dashboard</div>
                 <div class="card-body">
                     <div class="row">
-                        @if(count($galleries)>0)
-                        @foreach ($galleries as $gallery)
+                        @foreach ($datas as $gallery)
                             <div class="col-sm-2">
                                 <div>
                                     <a class="example-image-link" href="{{asset('storage/posts_image/'.$gallery->picture )}}" data-lightbox="roadtrip" data-title="{{$gallery->description}}">
@@ -19,11 +18,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    @else
-                    <h3>Tidak ada data.</h3>
-                    @endif
-                        <div class="d-flex">
-                        {{ $galleries->links() }}
                     </div>
                 </div>
             </div>

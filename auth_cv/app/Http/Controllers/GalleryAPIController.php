@@ -47,13 +47,10 @@ class GalleryAPIController extends Controller
     }
 
     public function index(){
-        $data = array(
-            'id' => "posts",
-            'menu' => 'Gallery',
-            'galleries' => Post::where('picture', '!=',
-           '')->whereNotNull('picture')->orderBy('created_at', 'desc')->paginate(30)
-            );
-            return view('galleryAPI.index')->with($data);
+        
+        $response = Http::get('http://127.0.0.1:9000/api/getgallery');
+        $datas = $response->object()->data;
+        return view('galleryAPI.index', compact('datas'));
     }
 
     /**
@@ -145,7 +142,7 @@ class GalleryAPIController extends Controller
             $post->description = $request->input('description');
             $post->save();
             
-            return redirect()->route('apiGetgallery')->with('success', 'Berhasil menambahkan data baru');
+            return redirect()->route('apiListgallery')->with('success', 'Berhasil menambahkan data baru');
 
 
            
