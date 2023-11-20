@@ -47,14 +47,6 @@ class GalleryAPIController extends Controller
     }
 
     public function index(){
-        // $posts = Http::get(env("API_URL")."gallery")["data"];
-        // dd($posts);
-        // $galleries = $posts->object()->data;
-        // return view('galleryAPI.index', compact('galleries'));
-        // // return view('post.index', [
-        // //     'page' => 'posts',
-        // //     'posts' => $posts,
-        // // ]);
         $data = array(
             'id' => "posts",
             'menu' => 'Gallery',
