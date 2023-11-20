@@ -45,6 +45,10 @@
                         <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{
                         route('gallery.index') }}">Gallery</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{
+                        route('apiListgallery') }}">GalleryAPI</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
-
+use Intervention\Image\Facades\Image;
 
 class GalleryController extends Controller
 {
@@ -21,7 +21,6 @@ class GalleryController extends Controller
            '')->whereNotNull('picture')->orderBy('created_at', 'desc')->paginate(30)
             );
             return view('gallery.index')->with($data);
-           
     }
 
     /**
